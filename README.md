@@ -36,7 +36,7 @@ Al evaluar la totalidad de la operación (+109k entregas), la plataforma exhibe 
 
 Sin embargo, evaluar la logística mediante un promedio estático enmascara la realidad del sistema. Al cruzar el volumen mensual contra la tasa de incumplimiento, los datos demuestran que **la red no es crónicamente ineficiente, sino inelástica**:
 
-![Volumen vs SLA Breach](notebooks/images/scatter_volumen_vs_sla.png)
+![Volumen vs SLA Breach](Notebook/images/scatter_volumen_vs_sla.png)
 *(Gráfico: Dispersión mensual de volumen de envíos vs. tasa de falla de SLA con benchmark promedio).*
 
 * **Operación Regular Controlada:** En meses estándar (volúmenes de hasta 6.000 pedidos), la tasa de fallas se mantiene estable entre el **3% y el 5%**, holgadamente por debajo del benchmark histórico.
@@ -61,7 +61,7 @@ El quiebre estructural se manifiesta en la **distribución final (última milla)
 * **Efecto Amortiguador (São Paulo):** SP tracciona casi la mitad del volumen concentrado (**46.7%**), pero es responsable de una proporción significativamente menor de los problemas (**35.9%** de los quiebres de SLA), ayudando a sostener el rendimiento global del sistema.
 * **Sobrerrepresentación Crítica (Río de Janeiro):** RJ representa solo el **14.2%** de las entregas, pero genera casi una cuarta parte (**24.6%**) de todas las fallas operativas de la red. Su cuota de problemas supera en más de 10 puntos porcentuales a su cuota de negocio.
 
-![Incidencia Logística por Estado Destino](notebooks/images/last_mile_bottlenecks.png)
+![Incidencia Logística por Estado Destino](Notebook/images/last_mile_bottlenecks.png)
 *(Gráfico de Incidencia: Contraste directo entre el volumen de demanda aportado al negocio [azul] versus la cuota de quiebres de SLA generados [rojo]).*
 
 Al profundizar a nivel de corredor logístico interestatal, la ruta **São Paulo ➔ Río de Janeiro** confirma ser el principal cuello de botella de la plataforma: el **93.57%** de los retrasos en este tramo recaen exclusivamente en la logística de tránsito y distribución local en destino, evidenciando una capacidad de transporte saturada.
@@ -70,7 +70,7 @@ Al profundizar a nivel de corredor logístico interestatal, la ruta **São Paulo
 
 Al cruzar los tramos de demora efectiva con las reseñas de satisfacción de los clientes, se comprueba que la tolerancia del usuario no se erosiona de forma gradual, sino mediante caídas abruptas:
 
-![Degradación de Satisfacción por Retraso](notebooks/images/barras_apiladas_cx.png)
+![Degradación de Satisfacción por Retraso](Notebook/images/barras_apiladas_cx.png)
 
 * **Entrega a Tiempo:** El **65.0%** de los clientes otorga 5 estrellas, mientras que las reseñas negativas de 1 estrella se limitan a un **8.5%**.
 * **El Umbral de Tolerancia (Días 3 a 5):** A partir del tercer día de retraso la percepción se desploma: las calificaciones de 5 estrellas caen al 15.0% y las valoraciones de 1 estrella se disparan al **48.3%**.
@@ -93,7 +93,7 @@ Al cruzar los tramos de demora efectiva con las reseñas de satisfacción de los
   * `05_analisis_relacional_corredores.sql`: Evaluación técnica del corredor SP ➔ RJ.
   * `06_estandar_historico_reviews.sql`: Benchmark global de calificaciones y reseñas.
   * `07_degradacion_satisfaccion_tramos.sql`: Matriz de satisfacción según tramos de retraso.
-* `notebooks/`
+* `Notebook/`
   * `images/`
     * `scatter_volumen_vs_sla.png`: Dispersión de volumen vs. fallas de SLA (Inelasticidad).
     * `last_mile_bottlenecks.png`: Matriz de concentración vs. falla en última milla.
