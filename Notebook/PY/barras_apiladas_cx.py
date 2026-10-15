@@ -6,7 +6,8 @@ import pandas as pd
 
 # 1. Cargar el CSV exportado de la Query 07
 df = pd.read_csv("data/07_degradacion_satisfaccion_tramos.csv")
-
+col_tramo = [c for c in df.columns if 'tramo' in c.lower()][0]
+df[col_tramo] = df[col_tramo].str.replace(r'^\d+\.\s*', '', regex=True)
 fig, ax = plt.subplots(figsize=(12, 6.5), dpi=300)
 
 colores = ["#C0392B", "#E67E22", "#F1C40F", "#82E0AA", "#27AE60"]
