@@ -51,29 +51,6 @@ for i, col in enumerate(categorias):
 # Invertir para que '0 Días (A Tiempo)' quede arriba
 ax.invert_yaxis()
 
-# Anotación del punto de quiebre (tramo de 3 a 5 días)
-# Ubicamos dinámicamente la fila del tramo 3 a 5 días
-idx_quiebre = df[df["tramo_entrega"].str.contains("3 a 5")].index[0]
-val_1_estrella = df.loc[idx_quiebre, "pct_1_estrella"]
-
-ax.annotate(
-    "PUNTO DE QUIEBRE (Días 3 a 5)\nLas calificaciones de 1 estrella\nsaltan"
-    f" drásticamente al {val_1_estrella:.1f}%",
-    xy=(val_1_estrella / 2, idx_quiebre),
-    xytext=(60, idx_quiebre - 0.3),
-    arrowprops=dict(
-        facecolor="#C0392B", shrink=0.08, width=1.2, headwidth=6, alpha=0.85
-    ),
-    fontsize=9.5,
-    fontweight="bold",
-    color="#922B21",
-    bbox=dict(
-        boxstyle="round,pad=0.35",
-        facecolor="#FDEDEC",
-        edgecolor="#E6B0AA",
-        alpha=0.95,
-    ),
-)
 
 ax.set_xlabel(
     "Distribución Porcentual de Reseñas (%)",
